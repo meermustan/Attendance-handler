@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    html {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    .attendance-table-heading {
+        display: flex;
+        overflow: auto;
+        min-width: 1400px;
+    }
+
+
+    .students-names-outer {
+        width: 200px;
+    }
+
+    .students-heading {
+        text-align: center;
+        border: 1px solid black;
+        background-color: #dbbeb0;
+        padding: 4%;
+    }
+
+    .students-heading-small {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .student-name-heading {
+        text-align: center;
+    }
+
+    .students-names-section {
+        background-color: rgb(237, 237, 237);
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(0, 0, 0, .5);
+        padding: 2%;
+    }
+
+
+    .attendance-boxes {
+        width: 1000px;
+        background-color: #dbbeb0;
+        text-align: center;
+    }
+
+    .boxes-heading {
+        background-color: #d3ae9c;
+    }
+
+    .boxes-date-day-heading {
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+        justify-content: end;
+        padding: .5%;
+    }
+
+    .boxes-date-day-outer {
+        display: flex;
+    }
+
+
+
+    .attendance-totals {
+        width: 200px;
+        background-color: #d3ae9c;
+        text-align: center;
+    }
+
+    .total-heading-small {
+        display: flex;
+        height: 44px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+
+
+    /* Table Body */
+
+    .attendance-body-inner{
+        flex-direction:column;
+        display: flex;
+        min-width: 1400px;
+        overflow: auto;
+    }
+    .attendance-body-list{
+        display:flex;
+    }
+
+    .students-names{
+        text-align: center;
+        width: 198px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .boxes{
+        display: flex;
+    }
+    .box{
+        width: 30.3px;
+        height: 44px;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(0, 0, 0, .2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .boxes-date-day-outer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .totals{
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        height:46px;
+        align-items: center;
+        background-color: #e4d7cf;
+    }
+
+</style>
+{% endblock css %}
+{% block body %}
+
+<div class="attendance-table-outer">
+    <div class="attendance-table-heading">
+        <div class="students-names-outer">
+            <div class="students-heading">
+                <h2>Students</h2>
+                <div class="students-heading-small">
+                    <div class="student-id-heading">ID</div>
+                    <div class="student-name-heading">Name</div>
+                </div>
+            </div>
+        </div>
+        <div class="attendance-boxes">
+            <div class="boxes-heading">
+                Enter: P - Present, L - Leave, H - Holiday
+            </div>
+
+            <div class="boxes-date-day-outer">
+                <!-- Increment Data through copy it. -->
+                <div class="boxes-date-day-heading">
+                    <div class="day-heading">M</div>
+                    <div class="date-heading">1</div>
+                </div>
+                <!-- at that point -->
+
+            </div>
+
+
+        </div>
+        <div class="attendance-totals">
+
+            <div class="total-heading">
+                <h3>Totals</h3>
+            </div>
+            <div class="total-heading-small">
+                <h5>T</h5>
+                <h5>U</h5>
+                <h5>E</h5>
+                <h5>P</h5>
+            </div>
+
+        </div>
+    </div>
+    <div class="attendance-table-body">
+
+        <div class="attendance-body-inner">
+            {% for item in students %}
+
+            <div class="attendance-body-list">
+                <div class="students-names">
+                    
+                    {% for i in item %}
+                       {{i.data}}
+                    {% endfor %}
+
+                </div>
+                <div class="boxes">
+                    <div class="box">{{item.1.0}}</div>
+                        <div class="box">{{item.1.1}}</div>
+                        <div class="box">{{item.1.2}}</div>
+                        <div class="box">{{item.1.3}}</div>
+                        <div class="box">{{item.1.4}}</div>
+                        <div class="box">{{item.1.5}}</div>
+                        <div class="box">{{item.1.6}}</div>
+                        <div class="box">{{item.1.7}}</div>
+                        <div class="box">{{item.1.8}}</div>
+                        <div class="box">{{item.1.9}}</div>
+                        <div class="box">{{item.1.10}}</div>
+                        <div class="box">{{item.1.11}}</div>
+                        <div class="box">{{item.1.12}}</div>
+                        <div class="box">{{item.1.13}}</div>
+                        <div class="box">{{item.1.14}}</div>
+                        <div class="box">{{item.1.15}}</div>
+                        <div class="box">{{item.1.16}}</div>
+                        <div class="box">{{item.1.17}}</div>
+                        <div class="box">{{item.1.18}}</div>
+                        <div class="box">{{item.1.19}}</div>
+                        <div class="box">{{item.1.20}}</div>
+                        <div class="box">{{item.1.21}}</div>
+                        <div class="box">{{item.1.22}}</div>
+                        <div class="box">{{item.1.23}}</div>
+                        <div class="box">{{item.1.24}}</div>
+                        <div class="box">{{item.1.25}}</div>
+                        <div class="box">{{item.1.26}}</div>
+                        <div class="box">{{item.1.27}}</div>
+                        <div class="box">{{item.1.28}}</div>
+                        <div class="box">{{item.1.29}}</div>
+                        <div class="box">{{item.1.30}}</div>
+                    </div>
+                    <div class="totals">
+                        <div class="totals-t">0</div>
+                        <div class="totals-u">0</div>
+                        <div class="totals-e">0</div>
+                        <div class="totals-s">0</div>
+                    </div>
+
+                </div>
+            
+
+                {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+{% endblock body %}
