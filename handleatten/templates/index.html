@@ -149,12 +149,21 @@
             </div>
 
             <div class="boxes-date-day-outer">
-                <!-- Increment Data through copy it. -->
-                <div class="boxes-date-day-heading">
-                    <div class="day-heading">M</div>
-                    <div class="date-heading">1</div>
-                </div>
-                <!-- at that point -->
+
+               {% for item in MonthDetails %}
+                    <!-- Increment Data through copy it. -->
+                    {% comment %} <div class="boxes-date-day-heading">
+                        <div class="day-heading">{{item|date:"l"|slice:'2'}}</div>
+                        <div class="date-heading">{{item|date:"d"}}</div>
+                    </div> {% endcomment %}
+                    <div class="boxes-date-day-heading">
+                        <div class="day-heading">Mo</div>
+                        <div class="date-heading">1</div>
+                    </div> 
+
+                    <!-- at that point -->
+                {% endfor %} 
+                
 
             </div>
 

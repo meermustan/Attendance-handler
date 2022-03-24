@@ -1,4 +1,7 @@
+from datetime import date
+from warnings import catch_warnings
 from django.shortcuts import render,HttpResponse
+from django.utils import timezone
 from .models import Student,StudentsAttendance
 
 # Create your views here.
@@ -8,11 +11,15 @@ def index(request):
     finalQuery = []
     
     for item in tenthStudents:
-        # print(StudentsAttendance.objects.filter(data=item).values())
         finalQuery.append([item,StudentsAttendance.objects.filter(data=item)])
-    # print(finalQuery)
-    
 
+
+
+    # MonthDetails = []
+    # for item in range(31):
+    #     item = item+1
+    #     my_date = date(2022,3,item)
+    #     MonthDetails.append(my_date)
 
 
 
